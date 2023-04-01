@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import PostModal from "../PostModal/PostModal";
 
 const UserProfilePosts = ({ posts }) => {
   const postList = posts?.posts;
-  console.log(postList);
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  const handleOpenModal = (post) => {
+    setSelectedPost(post);
+  };
+
   return (
     <>
       <div className="flex flex-col items-center justify-center pb-5">
@@ -14,7 +20,7 @@ const UserProfilePosts = ({ posts }) => {
                   <h2 className="card-title">{item?.title || "N/A"}</h2>
                   <p>{item?.body?.substring(0, 70) + "..." || "N/A"}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary mt-3">Read More</button>
+                    <label htmlFor="postModal" className="btn btn-primary mt-3" onClick={() => handleOpenModal(item)}>Read More</label>
                   </div>
                 </div>
               </div>
@@ -26,6 +32,9 @@ const UserProfilePosts = ({ posts }) => {
           )}
         </div>
       </div>
+      {selectedPost && (
+        <PostModal post={selectedPost}/>
+      )}
     </>
   );
 };

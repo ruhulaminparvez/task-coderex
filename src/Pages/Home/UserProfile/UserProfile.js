@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useUser from "../../../hooks/useUser";
-import UserProfileInfo from "./UserProfileInfo";
-import UserProfilePosts from "./UserProfilePosts";
+import UserProfileInfo from "./UserProfileInfo/UserProfileInfo";
+import UserProfilePosts from "./UserProfilePosts/UserProfilePosts";
 
 const UserProfile = () => {
   const { userId } = useParams();

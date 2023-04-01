@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p>Copyright © 2023 - Task Done by <Link to="https://github.com/ruhulaminparvez">Ruhul Amin Parvez</Link></p>
+          <p>Copyright © 2023 - Task Done by <Link className="hover:text-primary" to="https://github.com/ruhulaminparvez">Ruhul Amin Parvez</Link></p>
         </div>
       </footer>
     </div>
