@@ -1,4 +1,4 @@
-## Task - CodeRex
+## Task - CodeRex ![GitHub last commit](https://img.shields.io/github/last-commit/ruhulaminparvez/task-coderex?color=blue&label=last%20commit&logo=github&style=flat-square)
 
 ### Live Deployed Link
 [https://coderex-task.netlify.app/](https://coderex-task.netlify.app/)
