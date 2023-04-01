@@ -1,11 +1,12 @@
-import './App.css';
+import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router/Routes/Routes";
 
 function App() {
   return (
-    <div>
-      <h1>Task CodeRex</h1>
+    <div data-theme="winter">
+      <RouterProvider router={router} />
     </div>
   );
 }
-
 export default App;
