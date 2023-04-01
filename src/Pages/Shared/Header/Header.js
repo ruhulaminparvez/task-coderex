@@ -43,7 +43,6 @@ const Header = () => {
           </ul>
         </div>
         <Link to="" className="normal-case text-xl">
-          {/* <img src={logo} alt="Logo" className="h-16" /> */}
           <h1 className="text-3xl font-bold">CodeRex</h1>
         </Link>
       </div>
@@ -51,8 +50,8 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="/" className="btn btn-primary mr-2">
-          LogIn
+        <Link to="https://github.com/ruhulaminparvez/task-coderex" className="btn btn-primary mr-2">
+          GitHub Repository
         </Link>
       </div>
     </div>
