@@ -17,13 +17,18 @@ const Users = () => {
               <div className="card w-96 bg-base-100 shadow-xl" key={index + 1}>
                 <div className="card">
                   <div className="card-body">
-                    <h2 className="card-title text-2xl font-bold mb-2">
-                      UserName: {item?.username || "N/A"}
+                    <div className="avatar">
+                        <div className="w-24 h-24 mask mask-squircle mx-auto mb-2">
+                            <img src={item?.image || "https://i.pravatar.cc/300"} alt="avatar" />
+                        </div>
+                    </div>
+                    <h2 className="card-title text-2xl font-bold text-center mx-auto mb-2">
+                      {item?.firstName || "N/A"} {item?.lastName || "N/A"}
                     </h2>
-                    <h3 className="card-subtitle text-lg font-medium mb-2">
+                    <h3 className="card-subtitle text-lg font-medium text-center mb-2">
                       Email: {item?.email || "N/A"}
                     </h3>
-                    <h3 className="card-subtitle text-lg font-medium mb-4">
+                    <h3 className="card-subtitle text-lg font-medium text-center mb-4">
                       Company: {item?.company?.name || "N/A"}
                     </h3>
                     <button className="btn btn-primary px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue mt-2">
