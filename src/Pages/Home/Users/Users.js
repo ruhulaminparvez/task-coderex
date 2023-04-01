@@ -6,27 +6,39 @@ const Users = () => {
   const userList = users?.users;
 
   return (
-    <div>
+    <div className="py-3">
       <div className="flex flex-col items-center justify-center py-5">
         <h1 className="text-4xl font-bold text-center">Users List</h1>
       </div>
-      <div className="grid grid-cols-1 gap-4 p-5 mx-auto sm:grid-cols-2 lg:grid-cols-3">
-        {userList && userList.length > 0 ? (
-          userList.map((item, index) => (
-            <div className="card w-96 bg-base-100 shadow-xl" key={index+1}>
-              <div className="card-body">
-                <h2 className="card-title"> UserName: {item?.username || "N/A"}</h2>
-                <h3 className="card-subtitle">Email: {item?.email || "N/A"}</h3>
-                <h3 className="card-subtitle">Company: {item?.company?.name || "N/A"}</h3>
-                <button className="btn btn-primary mt-2">View Details</button>
+      <div className="flex flex-col items-center justify-center pb-5">
+        <div className="grid grid-cols-1 gap-4 p-5 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+          {userList && userList.length > 0 ? (
+            userList.map((item, index) => (
+              <div className="card w-96 bg-base-100 shadow-xl" key={index + 1}>
+                <div className="card">
+                  <div className="card-body">
+                    <h2 className="card-title text-2xl font-bold mb-2">
+                      UserName: {item?.username || "N/A"}
+                    </h2>
+                    <h3 className="card-subtitle text-lg font-medium mb-2">
+                      Email: {item?.email || "N/A"}
+                    </h3>
+                    <h3 className="card-subtitle text-lg font-medium mb-4">
+                      Company: {item?.company?.name || "N/A"}
+                    </h3>
+                    <button className="btn btn-primary px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue mt-2">
+                      View Details
+                    </button>
+                  </div>
+                </div>
               </div>
+            ))
+          ) : (
+            <div className="flex flex-col items-center justify-center py-5">
+              <h1 className="text-4xl font-bold text-center">No Users Found</h1>
             </div>
-          ))
-        ) : (
-          <div className="flex flex-col items-center justify-center py-5">
-            <h1 className="text-4xl font-bold text-center">No Users Found</h1>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
