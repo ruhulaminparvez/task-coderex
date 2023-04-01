@@ -1,5 +1,6 @@
 import React from "react";
 import useUsers from "../../../hooks/useUsers";
+import { Link } from "react-router-dom";
 
 const Users = () => {
   const users = useUsers();
@@ -25,15 +26,15 @@ const Users = () => {
                     <h2 className="card-title text-2xl font-bold text-center mx-auto mb-2">
                       {item?.firstName || "N/A"} {item?.lastName || "N/A"}
                     </h2>
-                    <h3 className="card-subtitle text-lg font-medium text-center mb-2">
+                    <h3 className="card-subtitle text-lg font-medium text-center">
                       Email: {item?.email || "N/A"}
                     </h3>
                     <h3 className="card-subtitle text-lg font-medium text-center mb-4">
                       Company: {item?.company?.name || "N/A"}
                     </h3>
-                    <button className="btn btn-primary px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue mt-2">
-                      View Details
-                    </button>
+                    <Link to={`/user/${item?.id}`} className="btn btn-primary px-4 py-2 transition duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue mt-2">
+                        View Details
+                    </Link>
                   </div>
                 </div>
               </div>
